@@ -1,6 +1,6 @@
 buildscript {
     repositories {
-        mavenCentral()
+        maven { url "http://localhost:8081/artifactory/remote-repos" }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:1.1.4.RELEASE")
@@ -18,7 +18,7 @@ jar {
 }
 
 repositories {
-    mavenCentral()
+    maven { url "http://localhost:8081/artifactory/remote-repos" }
 }
 
 dependencies {
@@ -32,6 +32,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
     // end::actuator[]
     testCompile("junit:junit")
+    compile("org.springframework.boot:spring-boot-starter-actuator")
 }
 
 task wrapper(type: Wrapper) {
